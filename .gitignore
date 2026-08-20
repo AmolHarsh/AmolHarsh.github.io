@@ -1,0 +1,24 @@
+# dependencies
+node_modules
+
+# next.js
+.next
+out
+next-env.d.ts
+
+# build artifacts
+*.tsbuildinfo
+
+# secrets — never commit
+.env*
+info.txt
+
+# macOS (AppleDouble sidecars from external drives)
+.DS_Store
+._*
+
+# logs
+*.log
+
+# unrelated local assets
+3d_examples/
