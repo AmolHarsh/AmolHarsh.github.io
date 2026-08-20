@@ -17,7 +17,7 @@ export function Publications() {
         {publications.map((p, idx) => (
           <li key={idx} className="flex gap-4">
             <span className="text-xs font-mono text-faint mt-1 shrink-0 w-6">
-              [{publications.length - idx}]
+              [{idx + 1}]
             </span>
             <div className="flex-1 min-w-0">
               <p className="text-ink leading-snug font-medium">{p.title}</p>
