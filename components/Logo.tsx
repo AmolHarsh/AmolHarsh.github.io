@@ -11,7 +11,7 @@ export function Logo({ src, alt }: { src?: string; alt: string }) {
 
   return (
     <span
-      className={`inline-flex items-center justify-center h-16 w-16 sm:h-20 sm:w-20 rounded-lg shrink-0 overflow-hidden p-2 ${card}`}
+      className={`logo-card inline-flex items-center justify-center h-16 w-16 sm:h-20 sm:w-20 rounded-lg shrink-0 overflow-hidden p-2 ${card}`}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={src} alt={alt} className="max-h-full max-w-full object-contain" />

@@ -1,12 +1,16 @@
 import type { projects } from "@/content/data";
+import { Reveal } from "./Reveal";
+import { LinkGlyph } from "./Icons";
 
 type Project = (typeof projects)[number];
 
-export function ProjectItem({ p }: { p: Project }) {
+export function ProjectItem({ p, delay = 0 }: { p: Project; delay?: number }) {
   return (
-    <li>
+    <Reveal as="li" delay={delay} className="lift group">
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <h3 className="text-lg font-medium text-ink leading-snug">{p.title}</h3>
+        <h3 className="text-lg font-medium text-ink leading-snug group-hover:text-accent transition-colors duration-300">
+          {p.title}
+        </h3>
         <span className="text-xs text-faint font-mono shrink-0">{p.period}</span>
       </div>
       <div className="mt-1 text-sm text-faint">
@@ -19,7 +23,7 @@ export function ProjectItem({ p }: { p: Project }) {
       <ul className="mt-3 space-y-2 text-muted leading-relaxed text-[0.95rem]">
         {p.bullets.map((b, i) => (
           <li key={i} className="pl-4 relative">
-            <span className="absolute left-0 top-[0.65rem] h-1 w-1 rounded-full bg-faint" />
+            <span className="absolute left-0 top-[0.65rem] h-1 w-1 rounded-full bg-faint transition-colors duration-300 group-hover:bg-accent" />
             {b}
           </li>
         ))}
@@ -32,8 +36,9 @@ export function ProjectItem({ p }: { p: Project }) {
               href={l.href}
               target="_blank"
               rel="noreferrer"
-              className="text-muted hover:text-accent underline decoration-line hover:decoration-accent underline-offset-4"
+              className="inline-flex items-center gap-1 text-muted hover:text-accent transition-colors ulink"
             >
+              <LinkGlyph label={l.label} />
               {l.label}
             </a>
           ))}
@@ -43,12 +48,13 @@ export function ProjectItem({ p }: { p: Project }) {
         {p.tags.map((t) => (
           <span
             key={t}
-            className="text-[0.7rem] px-2 py-0.5 rounded bg-surface border border-line text-faint font-mono"
+            className="text-[0.7rem] px-2 py-0.5 rounded bg-surface border border-line text-faint font-mono
+              transition-all duration-300 hover:border-accent hover:text-accent"
           >
             {t}
           </span>
         ))}
       </div>
-    </li>
+    </Reveal>
   );
 }

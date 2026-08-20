@@ -1,5 +1,7 @@
 import { publications } from "@/content/data";
 import { Section } from "./Section";
+import { Reveal } from "./Reveal";
+import { LinkGlyph } from "./Icons";
 
 function highlightAuthor(authors: string, me: string) {
   const parts = authors.split(me);
@@ -15,12 +17,14 @@ export function Publications() {
     <Section id="publications" title="Publications" kicker="Peer-reviewed & under review">
       <ol className="space-y-7">
         {publications.map((p, idx) => (
-          <li key={idx} className="flex gap-4">
-            <span className="text-xs font-mono text-faint mt-1 shrink-0 w-6">
+          <Reveal as="li" key={idx} delay={idx * 60} className="flex gap-4 lift group">
+            <span className="text-xs font-mono text-faint mt-1 shrink-0 w-6 transition-colors duration-300 group-hover:text-accent">
               [{idx + 1}]
             </span>
             <div className="flex-1 min-w-0">
-              <p className="text-ink leading-snug font-medium">{p.title}</p>
+              <p className="text-ink leading-snug font-medium group-hover:text-accent transition-colors duration-300">
+                {p.title}
+              </p>
               <p className="text-sm text-muted mt-1">{highlightAuthor(p.authors, p.me)}</p>
               <p className="text-sm text-faint mt-1">
                 <span className="italic">{p.venue}</span>
@@ -30,8 +34,24 @@ export function Publications() {
                   <>
                     <span className="mx-2 text-line">·</span>
                     <span
-                      className={p.status === "Under Review" ? "text-warn" : "text-accent"}
+                      className={`inline-flex items-center gap-1 ${
+                        p.status === "Under Review" ? "text-warn" : "text-accent"
+                      }`}
                     >
+                      {p.status !== "Under Review" && (
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-3 w-3"
+                          aria-hidden="true"
+                        >
+                          <path d="M20 6 9 17l-5-5" />
+                        </svg>
+                      )}
                       {p.status}
                     </span>
                   </>
@@ -51,15 +71,16 @@ export function Publications() {
                       href={l.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-muted hover:text-accent underline decoration-line hover:decoration-accent underline-offset-4"
+                      className="inline-flex items-center gap-1 text-muted hover:text-accent transition-colors ulink"
                     >
+                      <LinkGlyph label={l.label} />
                       {l.label}
                     </a>
                   ))}
                 </div>
               )}
             </div>
-          </li>
+          </Reveal>
         ))}
       </ol>
     </Section>

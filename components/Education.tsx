@@ -1,17 +1,18 @@
 import { education, skills, awards } from "@/content/data";
 import { Section } from "./Section";
 import { Logo } from "./Logo";
+import { Reveal } from "./Reveal";
 
 export function Education() {
   return (
     <Section id="education" title="Education" kicker="Academic background">
       <ol className="space-y-8">
-        {education.map((ed) => (
-          <li key={ed.school} className="flex gap-4">
+        {education.map((ed, i) => (
+          <Reveal as="li" key={ed.school} delay={i * 70} className="flex gap-4 lift group">
             <Logo src={ed.logo} alt={ed.school} />
             <div className="flex-1 min-w-0">
               <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                <h3 className="text-lg font-medium text-ink">{ed.school}</h3>
+                <h3 className="text-lg font-medium text-ink group-hover:text-accent transition-colors duration-300">{ed.school}</h3>
                 <span className="text-xs text-faint font-mono shrink-0">{ed.period}</span>
               </div>
               <p className="mt-1 text-sm text-muted">{ed.degree}</p>
@@ -30,11 +31,11 @@ export function Education() {
                 </ul>
               )}
             </div>
-          </li>
+          </Reveal>
         ))}
       </ol>
 
-      <div className="mt-14 grid sm:grid-cols-2 gap-8">
+      <Reveal className="mt-14 grid sm:grid-cols-2 gap-8">
         <div>
           <h3 className="text-sm uppercase tracking-[0.2em] text-faint mb-4">Skills</h3>
           <dl className="space-y-3">
@@ -57,7 +58,7 @@ export function Education() {
             ))}
           </ul>
         </div>
-      </div>
+      </Reveal>
     </Section>
   );
 }

@@ -4,6 +4,8 @@ import { projects, profile } from "@/content/data";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { ProjectItem } from "@/components/ProjectItem";
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { BackToTop } from "@/components/BackToTop";
 
 export const metadata: Metadata = {
   title: `Projects — ${profile.name}`,
@@ -13,14 +15,16 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <>
+      <ScrollProgress />
       <Nav />
       <main className="mx-auto max-w-3xl px-6">
         <div className="pt-14 sm:pt-20 pb-10">
           <Link
             href="/"
-            className="text-sm text-muted hover:text-accent underline decoration-line hover:decoration-accent underline-offset-4 transition-colors"
+            className="group text-sm text-muted hover:text-accent transition-colors"
           >
-            ← Back
+            <span className="inline-block transition-transform duration-300 group-hover:-translate-x-1">←</span>{" "}
+            Back
           </Link>
           <div className="text-xs uppercase tracking-[0.2em] text-accent mt-8 mb-2">
             All research projects
@@ -35,13 +39,14 @@ export default function ProjectsPage() {
         </div>
 
         <ol className="space-y-12 border-t border-line pt-12">
-          {projects.map((p) => (
-            <ProjectItem key={p.slug} p={p} />
+          {projects.map((p, i) => (
+            <ProjectItem key={p.slug} p={p} delay={i * 60} />
           ))}
         </ol>
 
         <Footer />
       </main>
+      <BackToTop />
     </>
   );
 }
