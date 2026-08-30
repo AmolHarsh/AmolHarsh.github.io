@@ -2,7 +2,7 @@ export const profile = {
   name: "Amol Harsh",
   tagline: "M.Sc. Computer Vision @ MBZUAI",
   blurb:
-    "I work on 3D scene understanding, multimodal models, and applied computer vision for healthcare and robotics. My first-author work Ground3D-LMM was accepted to ECCV 2026. Currently a visiting researcher at Microsoft Research India; previously at UC San Diego (MOSAIC Lab) and SUTD (MARVL Lab).",
+    "I am a Computer Vision M.Sc. student at MBZUAI, advised by Prof. Fahad Shahbaz Khan. I work on 3D scene understanding, multimodal models, and applied computer vision for healthcare and robotics — my first-author work Ground3D-LMM was accepted to ECCV 2026. Currently a visiting researcher at Microsoft Research India; previously at UC San Diego (MOSAIC Lab) and SUTD (MARVL Lab).",
   badge: "Ground3D-LMM accepted at ECCV 2026",
   location: "Abu Dhabi, UAE",
   email: "Amol.Harsh@mbzuai.ac.ae",
