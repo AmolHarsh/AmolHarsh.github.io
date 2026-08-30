@@ -151,6 +151,7 @@ export const publications = [
     year: 2026,
     status: "Accepted",
     me: "A. Harsh",
+    note: "invited poster, ODEWM Workshop",
     links: [
       { label: "arXiv", href: "https://arxiv.org/abs/2607.05493" },
       { label: "project page", href: "https://amolharsh.github.io/ground3d-lmm/" },
@@ -215,6 +216,26 @@ export const publications = [
     links: [
       { label: "arXiv", href: "https://arxiv.org/abs/2411.19497" },
     ],
+  },
+];
+
+export const talks = [
+  {
+    title: "Ground3D-LMM: Fine-Grained 3D Point Grounding and Spatial Reasoning with LMM",
+    kind: "Main conference poster",
+    venue:
+      "ECCV 2026 — Poster Session 6, Multimodal, Video & Document Understanding",
+    date: "15:00 CEST",
+    location: "ExHall, poster #162 · Malmö, Sweden",
+    href: "",
+  },
+  {
+    title: "Ground3D-LMM: Fine-Grained 3D Point Grounding and Spatial Reasoning with LMM",
+    kind: "Invited poster presentation",
+    venue: "ODEWM Workshop — On-device Embodied World Models, ECCV 2026",
+    date: "8 September 2026",
+    location: "Malmö Mässan, Malmö, Sweden",
+    href: "https://odewm.github.io/",
   },
 ];
 
