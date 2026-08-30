@@ -15,7 +15,16 @@ export function Education() {
                 <h3 className="text-lg font-medium text-ink group-hover:text-accent transition-colors duration-300">{ed.school}</h3>
                 <span className="text-xs text-faint font-mono shrink-0">{ed.period}</span>
               </div>
-              <p className="mt-1 text-sm text-muted">{ed.degree}</p>
+              <p className="mt-1 text-sm text-muted">
+                {ed.degree}
+                {ed.advisor && (
+                  <>
+                    <span className="mx-2 text-line">·</span>
+                    <span className="text-faint">Advised by </span>
+                    {ed.advisor}
+                  </>
+                )}
+              </p>
               <p className="mt-0.5 text-sm text-faint">
                 {ed.gpa && `GPA ${ed.gpa} · `}
                 {ed.location}
