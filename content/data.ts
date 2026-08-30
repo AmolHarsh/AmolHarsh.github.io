@@ -44,6 +44,7 @@ export const projects = [
       { label: "project page", href: "https://amolharsh.github.io/ground3d-lmm/" },
       { label: "code", href: "https://github.com/AmolHarsh/ground3d-lmm" },
       { label: "dataset", href: "https://huggingface.co/datasets/amolharsh/Ground3D_Dataset" },
+      { label: "video", href: "https://www.youtube.com/watch?v=UNkMmEFEBqQ" },
     ],
   },
   {
@@ -161,6 +162,7 @@ export const publications = [
         label: "dataset",
         href: "https://huggingface.co/datasets/amolharsh/Ground3D_Dataset",
       },
+      { label: "video", href: "https://www.youtube.com/watch?v=UNkMmEFEBqQ" },
     ],
   },
   {
