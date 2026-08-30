@@ -225,7 +225,7 @@ export const talks = [
     kind: "Main conference poster",
     venue:
       "ECCV 2026 — Poster Session 6, Multimodal, Video & Document Understanding",
-    date: "15:00 CEST",
+    date: "12 September 2026, 15:00 CEST",
     location: "ExHall, poster #162 · Malmö, Sweden",
     href: "",
   },
