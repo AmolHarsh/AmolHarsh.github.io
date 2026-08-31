@@ -1,5 +1,6 @@
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
+import { News } from "@/components/News";
 import { Research } from "@/components/Research";
 import { Publications } from "@/components/Publications";
 import { Talks } from "@/components/Talks";
@@ -16,6 +17,7 @@ export default function Home() {
       <Nav />
       <main className="mx-auto max-w-3xl px-6">
         <Hero />
+        <News />
         <Experience />
         <Publications />
         <Talks />

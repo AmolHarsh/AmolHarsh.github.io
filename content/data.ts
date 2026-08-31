@@ -21,6 +21,25 @@ export const profile = {
   ],
 };
 
+export const news = [
+  {
+    date: "Sep 2026",
+    text: "Presenting Ground3D-LMM at ECCV 2026 in Malmö — main-conference poster on 12 Sep, plus an invited poster at the ODEWM workshop on 8 Sep.",
+  },
+  {
+    date: "Aug 2026",
+    text: "Our MAP-CKD study on mitochondrial DNA and nailfold microvascular measures was accepted to Kidney International Reports.",
+  },
+  {
+    date: "Jul 2026",
+    text: "Ground3D-LMM accepted to ECCV 2026. Paper, code, and the Ground3D dataset are now public — the dataset has since passed 13,000 downloads on Hugging Face.",
+  },
+  {
+    date: "Jun 2026",
+    text: "Joined Microsoft Research India as a visiting researcher, working with Prof. Vineeth N. Balasubramanian on video world models.",
+  },
+];
+
 export const projects = [
   {
     slug: "ground3d-lmm",
