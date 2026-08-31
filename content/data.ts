@@ -28,7 +28,7 @@ export const news = [
   },
   {
     date: "Aug 2026",
-    text: "Our MAP-CKD study on mitochondrial DNA and nailfold microvascular measures was accepted to Kidney International Reports.",
+    text: "Our MAP-CKD study was accepted to Kidney International Reports. The nailfold microvascular measures in it come from the computer-vision pipeline I built during my UC San Diego internship — clinicians are now using that tool to draw insights about chronic kidney disease.",
   },
   {
     date: "Jul 2026",
