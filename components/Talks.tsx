@@ -4,7 +4,7 @@ import { Reveal } from "./Reveal";
 
 export function Talks() {
   return (
-    <Section id="talks" title="Talks & Presentations" kicker="Invited">
+    <Section id="talks" title="Talks & Presentations" kicker="Conference presentations">
       <ol className="space-y-7">
         {talks.map((t, i) => (
           <Reveal as="li" key={t.title + t.date} delay={i * 70} className="flex gap-4 lift group">
