@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { profile } from "@/content/data";
 
@@ -22,7 +23,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: noFlash }} />
       </head>
-      <body className="min-h-screen antialiased">{children}</body>
+      <body className="min-h-screen antialiased">
+        {children}
+        {/* Cloudflare Web Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "36ff976487d64a00814bc8779b475a9a"}'
+        />
+      </body>
     </html>
   );
 }
