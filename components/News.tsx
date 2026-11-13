@@ -3,7 +3,7 @@ import { Reveal } from "./Reveal";
 
 export function News() {
   return (
-    <section id="news" className="scroll-mt-20 pb-14 sm:pb-16">
+    <section id="news" className="pb-14 sm:pb-16">
       <Reveal className="mb-5">
         <h2 className="text-xs uppercase tracking-[0.2em] text-accent">News</h2>
       </Reveal>

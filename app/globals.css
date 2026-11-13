@@ -36,7 +36,9 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  /* Sticky header is 3.5rem; anchors land just below it. Sections must not
+     add their own scroll-margin on top of this, or the offsets stack. */
+  scroll-padding-top: 4rem;
 }
 
 body {
@@ -56,9 +58,13 @@ a {
 }
 
 /* ---- Scroll reveal ---- */
-.reveal {
+/* Hidden only when JS is running (see the "js" class set in layout.tsx);
+   with no JS, reveal content is plain, visible content. */
+.js .reveal:not([data-shown="true"]) {
   opacity: 0;
   transform: translateY(14px);
+}
+.reveal {
   transition:
     opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
@@ -153,7 +159,8 @@ a {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  .reveal {
+  /* Same selector as the hiding rule above, so this one wins. */
+  .js .reveal:not([data-shown="true"]) {
     opacity: 1;
     transform: none;
   }

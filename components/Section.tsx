@@ -12,7 +12,7 @@ export function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="scroll-mt-20 py-14 sm:py-20 border-t border-line">
+    <section id={id} className="py-14 sm:py-20 border-t border-line">
       <Reveal className="mb-8 sm:mb-10">
         {kicker && (
           <div className="text-xs uppercase tracking-[0.2em] text-accent mb-2">{kicker}</div>

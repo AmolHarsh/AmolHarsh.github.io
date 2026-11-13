@@ -15,7 +15,9 @@ export const metadata: Metadata = {
 };
 
 // Applies the stored theme before first paint so there is no flash.
-const noFlash = `try{if(localStorage.getItem("theme")==="dark")document.documentElement.classList.add("dark")}catch(e){}`;
+// The "js" class lets CSS hide scroll-reveal content only when the script that
+// reveals it can run — without JS, everything simply renders visible.
+const noFlash = `document.documentElement.classList.add("js");try{if(localStorage.getItem("theme")==="dark")document.documentElement.classList.add("dark")}catch(e){}`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
